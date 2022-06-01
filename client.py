@@ -4,10 +4,6 @@ import discord
 import random # this is not needed if you dont want it, I just found it fun
 
 
-'''
-reading key value pairs from .env
-file and set them as envir variables
-'''
 # ur discord token is inserted here
 TOKEN = {insert your discord token}
 client = discord.Client()
@@ -28,9 +24,9 @@ async def on_message(message): # event handler
 
     if message.author == client.user:
         return                   # setting discord channel name
-    if message.channel.name == 'the-bubble':
-        if user_msg.lower() == 'bow to the black bot': 
-            await message.channel.send(f'Bowing to {username}') #using fstring more efficient 
+    if message.channel.name == 'the-bubble': # set channel you wish commands to display in
+        if user_msg.lower() == 'Greetings benbot': 
+            await message.channel.send(f'Scrumptious day we are having {username}') #using fstring more efficient 
             return
         elif user_msg.lower() == 'goodbye':
             await message.channel.send(f'See you later {username}')
